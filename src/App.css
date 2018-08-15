@@ -1,12 +1,20 @@
+
 .App {
-  display: flex;
   text-align: center;
-  flex-direction: column;
+  background-color: gray;
 }
 
-.App-logo {
-  animation: App-logo-spin infinite 20s linear;
-  height: 80px;
+body {
+  background-color: black;
+  background-image: url(./images/Color+wheel_4b46cb_5222455.gif);
+  background-repeat: no-repeat;
+  
+}
+
+.Sliders  {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
 }
 
 .App-header {

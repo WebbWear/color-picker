@@ -8,8 +8,8 @@ class App extends Component {
     super(props);
     this.state = {
       hue: "180", 
-        saturation: "50",
-        lightness: "50"
+      saturation: "50",
+      lightness: "50"
     }
   }
 
@@ -42,20 +42,17 @@ class App extends Component {
   render() {
     return (
       <div className="App">
-        <header className="App-header">
+        <header className="App-header"  style={{backgroundColor: `hsl(${this.state.hue},${this.state.saturation}%,${this.state.lightness}%)`}}>
           <h1 className="App-title">Color Picker</h1>
-          <h3 className="App-Title-jeff">Jeff Webb</h3>
+          <h2 className="App-Title-jeff">Jeff Webb</h2>
         </header>
         <section className="Main-Picker">
-          <div style= {
-            {
-            height: '80px',
-            width: '120px',
-            backgroundColor: `hsl(${this.state.hue},${this.state.saturation}%,${this.state.lightness}%)`}}>
-          </div>
           <section className="Sliders">
+              <h3> Hue </h3>
             <input type="range" min="0" max="360" onInput={this.updateColor} onChange={this.updateHue} value={this.state.hue}/>
+              <h3> Saturation </h3>
             <input type="range" min="0" max="100" onInput={this.updateColor} onChange={this.updateSaturation} value={this.state.saturation}/>
+              <h3> Lightness </h3>
             <input type="range" min="0" max="100" onInput={this.updateColor} onChange={this.updateLightness} value={this.state.lightness}/>
           </section>  
         </section>
