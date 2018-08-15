@@ -1,5 +1,4 @@
 import React, { Component } from 'react';
-import logo from './logo.svg';
 import './App.css';
 
 class App extends Component {
@@ -8,10 +7,16 @@ class App extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      
+      hue: "180", 
+        saturation: "50",
+        lightness: "50"
     }
   }
 
+  updateColor = (event) => {
+    const newColor = event.target.value;
+    console.log('updating Color', newColor)
+  }
 
   updateHue = (event) => {
     const newHue = event.target.value
@@ -38,47 +43,24 @@ class App extends Component {
     return (
       <div className="App">
         <header className="App-header">
-          <img src={logo} className="App-logo" alt="logo" />
           <h1 className="App-title">Color Picker</h1>
+          <h3 className="App-Title-jeff">Jeff Webb</h3>
         </header>
-        <section className="App-intro">
-          <input
-            type="range"
-            min="0"
-            max="100"
-            // onInput={this.updateHue} 
-            onChange={this.updateHue}
-            value={this.state.hue}
-          />
-          <input
-            type="range"
-            min="0"
-            max="100"
-            // onInput={this.updateSaturation} 
-            onChange={this.updateSaturation}
-            value={this.state.saturation}
-          />
-          <input
-            type="range"
-            min="0"
-            max="100"
-            // onInput={this.updateLightness} 
-            onChange={this.updateLightness}
-            value={this.state.lightness}
-          />
-        </section>
-
-        <div
-          className="shape"
-          style={
+        <section className="Main-Picker">
+          <div style= {
             {
-              height: `${this.state.height}em`,
-              width: `${this.state.width}em`
-            }
-          }>
-        </div>
+            height: '80px',
+            width: '120px',
+            backgroundColor: `hsl(${this.state.hue},${this.state.saturation}%,${this.state.lightness}%)`}}>
+          </div>
+          <section className="Sliders">
+            <input type="range" min="0" max="360" onInput={this.updateColor} onChange={this.updateHue} value={this.state.hue}/>
+            <input type="range" min="0" max="100" onInput={this.updateColor} onChange={this.updateSaturation} value={this.state.saturation}/>
+            <input type="range" min="0" max="100" onInput={this.updateColor} onChange={this.updateLightness} value={this.state.lightness}/>
+          </section>  
+        </section>
       </div>
-    );
+    )
   }
 }
 
