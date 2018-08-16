@@ -44,7 +44,6 @@ class App extends Component {
       <div className="App">
         <header className="App-header"  style={{backgroundColor: `hsl(${this.state.hue},${this.state.saturation}%,${this.state.lightness}%)`}}>
           <h1 className="App-title">Color Picker</h1>
-          <h2 className="App-Title-jeff">Jeff Webb</h2>
         </header>
         <section className="Main-Picker">
           <section className="Sliders">
@@ -55,6 +54,9 @@ class App extends Component {
               <h3> Lightness </h3>
             <input type="range" min="0" max="100" onInput={this.updateColor} onChange={this.updateLightness} value={this.state.lightness}/>
           </section>  
+        </section>
+        <section className="img_container">
+        <section className="Extra-Stuff"></section>
         </section>
       </div>
     )
