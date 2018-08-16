@@ -44,6 +44,7 @@ class App extends Component {
       <div className="App">
         <header className="App-header"  style={{backgroundColor: `hsl(${this.state.hue},${this.state.saturation}%,${this.state.lightness}%)`}}>
           <h1 className="App-title">Color Picker</h1>
+            <h6> By: Jeff Webb </h6>
         </header>
         <section className="Main-Picker">
           <section className="Sliders">
